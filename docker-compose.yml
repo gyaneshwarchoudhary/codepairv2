@@ -1,0 +1,24 @@
+# File: CodePair/docker-compose.yml (Move this to root directory)
+version: "3.8"
+services:
+  server:
+    build:
+      context: ./server
+    ports:
+      - "5000:5000"
+    volumes:
+      # Source code
+      - ./server:/app:ro
+      # Anonymous volume for node_modules
+      - /app/node_modules
+      # Named volume for temporary files
+      - code-execution-temp:/app/temp
+    environment:
+      - NODE_ENV=production
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    init: true
+
+volumes:
+  code-execution-temp:
