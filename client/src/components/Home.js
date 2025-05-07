@@ -33,8 +33,8 @@ function Home() {
             <div className="card-body text-center bg-dark p-4">
               <h2 className="text-white mb-3">Welcome to CodePair</h2>
               <p className="text-light">
-                A Platform for Pair Programmers, collaborate in real time, make
-                video calls, leave inline comments
+                A Platform for Pair Programmers, collaborate in real time, leave
+                inline comments
               </p>
               <h5 className="text-light mb-4">Enter the Room ID</h5>
 
@@ -72,6 +72,22 @@ function Home() {
                 >
                   New Room
                 </span>
+              </p>
+              <p className="mt-2 text-light">
+                <a
+                  href="https://github.com/gyaneshwarchoudhary/codepairv2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: "#1E90FF",
+                    textDecoration: "none",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  Visit GitHub Repository
+                </a>
               </p>
             </div>
           </div>
