@@ -5,7 +5,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install essential tools and compilers
 RUN apt-get update && apt-get install -y \
-    nodejs \
     npm \
     python3 \
     g++ \

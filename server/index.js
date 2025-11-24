@@ -3,6 +3,9 @@ const app = express();
 const http = require("http");
 const { Server } = require("socket.io");
 const compileAndExecute = require("./compile");
+const cors = require("cors");
+
+app.use(cors());
 
 const server = http.createServer(app);
 const io = new Server(server);
@@ -10,7 +13,7 @@ const userSocketMap = {};
 
 // Add health check endpoint
 app.get("/health", (req, res) => {
-  res.status(200).send("OK");
+  return res.status(200).send("OK");
 });
 
 const getAllConnectedClients = (roomId) => {

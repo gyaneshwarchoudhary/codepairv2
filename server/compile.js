@@ -43,7 +43,14 @@ async function compileAndExecute(code, language) {
 
   const config = languageConfigs[language];
   const timestamp = Date.now();
-  const filename = `${timestamp}.${config.extension}`;
+  let filename;
+
+  if (language === "java") {
+    filename = "Main.java";
+  } else {
+    filename = `${timestamp}.${config.extension}`;
+  }
+
   const filePath = path.join(tempDir, filename);
 
   try {
