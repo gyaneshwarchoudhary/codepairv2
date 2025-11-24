@@ -10,14 +10,14 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
-  console.log(process.env.REACT_APP_BACKEND_URL);
+
   useEffect(() => {
     const checkServerHealth = async () => {
       try {
         const response = await fetch(
           `${process.env.REACT_APP_BACKEND_URL}/health`
         );
-        console.log(process.env.REACT_APP_BACKEND_URL);
+       
         if (response.status === 200) {
           setIsServerHealthy(true);
         } else {
@@ -66,7 +66,7 @@ function Home() {
               <span className="visually-hidden">Loading...</span>
             </div>
             <p className="mt-3 text-light">
-              Server is hosted on Free-Tier it takes time to spin up{" "}
+              Backend is hosted on Free-Tier it takes time to spin up{" "}
             </p>
           </div>
         </div>
